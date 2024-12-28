@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\Support\Facades\Hash;
 
 class UserAuthController extends Controller
@@ -24,9 +26,14 @@ class UserAuthController extends Controller
         $modelUser->email = $request->input('email');
         $modelUser->password = Hash::make($request->input('password'));
         $modelUser->save();
-        return redirect("loginPage");
+        return redirect()->route("login");
     }
-    public function PostLogin(){
-        return "post login";
+    public function PostLogin(Request $request){
+
+        $credentials = $request->only('email', 'password');
+        if (FacadesAuth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->route('HomePage');
+        }
     }
 }

@@ -27,6 +27,6 @@
         </div>
     </form>
     </div>
-    <a href={{Route('loginPage')}}">Login</a>
+    <a href="{{Route('login')}}">Login</a>
 </body>
 </html>

@@ -5,8 +5,6 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="{{route('login')}}">Login</a>
-    <a href="{{route('cadastroPage')}}">Cadastro</a>
-    <h1>teste</h1>
+    <h1>HomePage</h1>
 </body>
 </html>

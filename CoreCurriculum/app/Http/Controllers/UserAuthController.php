@@ -15,4 +15,10 @@ class UserAuthController extends Controller
     public function returnPageCadastro(){
         return view('UserAuth.cadastro');
     }
+    public function PostCadastro(){
+        return "post cadastro";
+    }
+    public function PostLogin(){
+        return "post login";
+    }
 }

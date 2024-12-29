@@ -10,6 +10,10 @@ class App extends Controller
     public function returnPageHome(){
         return view('App.Home');
     }
+    public function returnTemplate($nomeTemplate){
+        $diretorioTemplate = "App.Templates.$nomeTemplate" ;
+        return view($diretorioTemplate);
+    }
     public function pdf(){
             
     $data = [

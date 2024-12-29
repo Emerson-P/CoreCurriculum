@@ -13,5 +13,5 @@ Route::post('/login',[UserAuthController::class ,'PostLogin'])->name("loginPost"
 
 Route::middleware('auth')->group(function(){
     Route::get('/home',[App::class ,'returnPageHome'])->name("HomePage");
-    Route::get('/pdf',[App::class ,'pdf'])->name("pdf");
+    Route::get('/template/{nomeTemplate}',[App::class ,'returnTemplate'])->name("template");
 });

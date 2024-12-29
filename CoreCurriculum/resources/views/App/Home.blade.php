@@ -6,5 +6,6 @@
 </head>
 <body>
     <h1>HomePage</h1>
+    <a href="{{route("pdf")}}">pdf</a>
 </body>
 </html>
